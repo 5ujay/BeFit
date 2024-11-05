@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchWorkoutsByBodyPart } from "../workoutService";
+import { fetchWorkoutsByBodyPart } from "../api/workoutservice";
 import { Link } from "react-router-dom";
 
 const WorkoutDetail = () => {

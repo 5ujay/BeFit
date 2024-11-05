@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchWorkoutById } from "../workoutService";
+import { fetchWorkoutById } from "../api/workoutservice";
 
 const WorkoutInfo = () => {
   const { id } = useParams();
