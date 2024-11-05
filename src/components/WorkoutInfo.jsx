@@ -30,41 +30,39 @@ const WorkoutInfo = () => {
   return (
     <div className="bg-black p-10">
       <div className="max-w-4xl mx-auto p-8 bg-white rounded-lg shadow-lg lg:p-12">
-      <h1 className="text-4xl font-bold mb-8 text-center text-gray-800">
-        {workout.name}
-      </h1>
-      <div className="flex items-center jus">
-      <img
-        src={workout.gifUrl}
-        alt={workout.name}
-        className="w-60 h-72 object-cover rounded-lg mb-8"
-      />
+        <h1 className="text-4xl font-bold mb-8 text-center text-gray-800">
+          {workout.name}
+        </h1>
+        <div className="flex items-center justify-center">
+          <img
+            src={workout.gifUrl}
+            alt={workout.name}
+            className="w-60 h-72 object-cover rounded-lg mb-8"
+          />
+        </div>
+        <div className="text-lg text-gray-700 space-y-4">
+          <p>
+            <strong>Target:</strong> {workout.target}
+          </p>
+          <p>
+            <strong>Equipment:</strong> {workout.equipment}
+          </p>
+          <p>
+            <strong>Secondary Muscles:</strong>
+            {workout?.secondaryMuscles?.map((muscle, index) => (
+              <li key={index}>{muscle}</li>
+            ))}
+          </p>
+          <p className="font-semibold">Instructions:</p>
+          <ol className="list-decimal pl-6 space-y-2">
+            {workout?.instructions?.slice(0, 5).map((step, index) => (
+              <li key={index} className="leading-relaxed">
+                {step}
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
-      <div className="text-lg text-gray-700 space-y-4">
-        <p>
-          <strong>Target:</strong> {workout.target}
-        </p>
-        <p>
-          <strong>Equipment:</strong> {workout.equipment}
-        </p>
-        <p>
-          <strong>Secondary Muscles:</strong>
-          {workout.secondaryMuscles.map((muscle, index) => (
-            <li key={index}>
-              {muscle}
-            </li>
-          ))}
-        </p>
-        <p className="font-semibold">Instructions:</p>
-        <ol className="list-decimal pl-6 space-y-2">
-          {workout.instructions.slice(0, 5).map((step, index) => (
-            <li key={index} className="leading-relaxed">
-              {step}
-            </li>
-          ))}
-        </ol>
-      </div>
-    </div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchBodyParts } from '../workoutService';
-import workoutImages from '../workout';
+import workoutImages from '../workoutImages';
 
 const Workout = () => {
   const [bodyParts, setBodyParts] = useState([]);
